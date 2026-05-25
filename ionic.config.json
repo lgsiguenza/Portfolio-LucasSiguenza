@@ -1,0 +1,7 @@
+{
+  "name": "Portafolio-LGS",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
