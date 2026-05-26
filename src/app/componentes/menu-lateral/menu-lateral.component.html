@@ -1,0 +1,36 @@
+<ion-menu
+  contentId="main-content"
+  side="start"
+  menuId="portfolio-menu">
+
+  <ion-header>
+
+    <ion-toolbar class="mobile-toolbar">
+      <ion-title>Navegación</ion-title>
+    </ion-toolbar>
+
+  </ion-header>
+
+  <ion-content>
+
+    <ion-list>
+
+      @for(item of items; track item.side) {
+
+        <ion-item
+          button
+          detail="false"
+          class="mobile-item"
+          (click)="onSelect(item.side)">
+
+          {{ item.label }}
+
+        </ion-item>
+
+      }
+
+    </ion-list>
+
+  </ion-content>
+
+</ion-menu>

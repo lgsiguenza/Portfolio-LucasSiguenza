@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonButtons, IonIcon } from '@ionic/angular/standalone';
 import { Lado } from 'src/app/models/cubo';
 import { HeaderComponent } from "src/app/componentes/header/header.component";
+import { MenuLateralComponent } from "src/app/componentes/menu-lateral/menu-lateral.component";
 
 
 
@@ -10,7 +11,7 @@ import { HeaderComponent } from "src/app/componentes/header/header.component";
   templateUrl: './principal.page.html',
   styleUrls: ['./principal.page.scss'],
   standalone: true,
-  imports: [IonContent, IonContent, IonButton, IonButtons, IonIcon, HeaderComponent]
+  imports: [IonContent, IonContent, IonButton, IonButtons, IonIcon, HeaderComponent, MenuLateralComponent]
 })
 export class PrincipalPage implements OnInit {
 

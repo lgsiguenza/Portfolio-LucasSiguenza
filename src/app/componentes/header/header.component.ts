@@ -1,16 +1,20 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Lado } from 'src/app/models/cubo';
-import { IonButton } from "@ionic/angular/standalone";
+import { IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonItem, IonList,
+   IonMenu, IonMenuButton, IonTitle,IonToolbar } from "@ionic/angular/standalone";
+import { addIcons } from 'ionicons';
+import {menuOutline} from 'ionicons/icons';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  imports: [IonButton],
+  imports: [IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonItem, IonList,
+   IonMenu, IonMenuButton, IonTitle,IonToolbar],
 })
 export class HeaderComponent  implements OnInit {
 
-  @Input({ required: true })
+ @Input({ required: true })
   public items!: { label: string; side: Lado }[];
 
   @Input({ required: true })
@@ -24,7 +28,9 @@ export class HeaderComponent  implements OnInit {
   }
 
 
-  constructor() { }
+  constructor() { 
+    addIcons({menuOutline})
+  }
 
   ngOnInit() {}
 

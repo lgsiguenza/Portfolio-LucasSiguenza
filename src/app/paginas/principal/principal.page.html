@@ -1,16 +1,21 @@
-<ion-content [fullscreen]="true">
+<ion-content>
+
+  <app-menu-lateral
+    [items]="menuItems"
+    (sideChange)="changeSide($event)">
+  </app-menu-lateral>
 
   <app-header
     [items]="menuItems"
     [currentSide]="currentSide"
     (sideChange)="changeSide($event)">
   </app-header>
-  <main class="portfolio-layout">
+<div id="main-content">
+    <main class="portfolio-layout">
 
+      <section class="scene">
 
-    <section class="scene">
-
-      <div class="cube" [class]="'cube show-' + currentSide">
+        <div class="cube" [class]="'cube show-' + currentSide">
 
         <!-- FRONT -->
 
@@ -20,22 +25,23 @@
 
             <div class="intro-image">
               <img
-                src="https://images.pexels.com/photos/2726111/pexels-photo-2726111.jpeg"
+                src="assets/Foto_Portafolio.jpg"
                 alt="Profile">
             </div>
 
             <div class="intro-content">
 
               <h1 class="intro-heading">
-                Hi, I'm Lilly, a <span>Frontend</span> Developer
+                Hola, Soy Lucas Sigüenza, un <span>Desarrollador fullstack</span>.
               </h1>
 
               <p class="intro-text">
-                An economics major turned business journalist who found a passion for coding and web development.
+                Soy técnico superior en programación certificado por la Universidad Tecnológica Nacional(UTN)
               </p>
 
               <p class="intro-text">
-                I started out on the software engineering path two years ago with Python but one look at JavaScript was enough to convince me that web development is going to be my zing.
+                Me dedico a desarrollar sistemas escalables y modulares, empleando herramientas basadas en nodejs como Angular o Ionic, y
+                ejerzo baas a través de Supabase, Firebase o cualquier base de datos online.
               </p>
 
             </div>
@@ -79,5 +85,5 @@
     </section>
 
   </main>
-
+  </div>
 </ion-content>

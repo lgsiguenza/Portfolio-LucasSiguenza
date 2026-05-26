@@ -1,21 +1,32 @@
 <header class="portfolio-header">
 
-  <div class="header-scroll">
+  <ion-toolbar class="desktop-toolbar">
 
-    @for(item of items; track item.side) {
+    <ion-buttons slot="start" class="mobile-menu-btn">
 
-      <ion-button
-        fill="clear"
-        class="menu-btn"
-        [class.active]="currentSide === item.side"
-        (click)="onSelect(item.side)">
+      <ion-menu-button menu="portfolio-menu">
+      </ion-menu-button>
 
-        {{ item.label }}
+    </ion-buttons>
 
-      </ion-button>
+    <div class="header-scroll">
 
-    }
+      @for(item of items; track item.side) {
 
-  </div>
+        <ion-button
+          fill="clear"
+          class="menu-btn"
+          [class.active]="currentSide === item.side"
+          (click)="onSelect(item.side)">
+
+          {{ item.label }}
+
+        </ion-button>
+
+      }
+
+    </div>
+
+  </ion-toolbar>
 
 </header>

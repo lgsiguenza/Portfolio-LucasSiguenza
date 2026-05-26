@@ -1,0 +1,39 @@
+ion-menu {
+  --width: 280px;
+}
+
+.mobile-toolbar {
+  --background: rgba(0, 0, 0, 0.95);
+  --color: white;
+
+  border-bottom: 1px solid rgba(0, 234, 255, 0.2);
+}
+
+ion-content {
+  --background: rgba(0, 0, 0, 0.98);
+}
+
+ion-list {
+  background: transparent;
+
+  padding-top: 0.5rem;
+}
+
+.mobile-item {
+  --background: transparent;
+  --color: white;
+
+  font-family: monospace;
+
+  border-bottom: 1px solid rgba(0, 234, 255, 0.12);
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.mobile-item:hover {
+  --background: rgba(0, 234, 255, 0.08);
+
+  transform: translateX(4px);
+}
