@@ -37,12 +37,7 @@
 
   &::part(content) {
 
-    --background: #{$bordo};
-
-    background: $bordo;
-
     border-radius: 18px;
-    border: 2px solid rgba($dorado, 0.25);
 
     box-shadow:
       0 20px 40px rgba(0,0,0,0.18),
@@ -73,13 +68,8 @@
     height: 4px;
 
     z-index: 10;
-
-    background: linear-gradient(
-      90deg,
-      $bordo,
-      $dorado,
-      $givry
-    );
+      
+      
   }
 
   /* importante para ion-content */

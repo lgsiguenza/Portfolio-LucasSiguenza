@@ -9,8 +9,7 @@ import {menuOutline} from 'ionicons/icons';
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  imports: [IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonItem, IonList,
-   IonMenu, IonMenuButton, IonTitle,IonToolbar],
+  imports: [IonButton, IonButtons, IonMenuButton, IonToolbar],
 })
 export class HeaderComponent  implements OnInit {
 

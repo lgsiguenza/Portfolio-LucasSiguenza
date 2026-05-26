@@ -19,7 +19,7 @@
 
         <!-- FRONT -->
 
-        <article class="cube-face cube-face-front">
+        <article class="cube-face cube-face-front" >
 
           <div class="intro-wrapper">
 
@@ -32,7 +32,7 @@
             <div class="intro-content">
 
               <h1 class="intro-heading">
-                Hola, Soy Lucas Sigüenza, un <span>Desarrollador fullstack</span>.
+                Soy Lucas Sigüenza, un <span>Desarrollador fullstack</span>.
               </h1>
 
               <p class="intro-text">
@@ -52,32 +52,87 @@
 
         <!-- RIGHT -->
 
-        <article class="cube-face cube-face-right">
-          <h2 class="face-title">Wo<span>rk</span></h2>
+        <article class="cube-face cube-face-right interactive-face" (click)="abrirModal(currentSide)" >
+          <h2 class="face-title">Mi tra<span>bajo</span></h2>
         </article>
 
         <!-- BACK -->
 
-        <article class="cube-face cube-face-back">
-          <h2 class="face-title">Educa<span>tion</span></h2>
+        <article class="cube-face cube-face-back interactive-face" (click)="abrirModal(currentSide)" >
+          <h2 class="face-title">Educa<span>ción</span></h2>
         </article>
 
         <!-- LEFT -->
 
-        <article class="cube-face cube-face-left">
-          <h2 class="face-title">Certi<span>fi</span>cates</h2>
+        <article class="cube-face cube-face-left interactive-face" (click)="abrirModal(currentSide)" >
+          <h2 class="face-title">Tecnolo<span>gías.</span></h2>
         </article>
 
         <!-- TOP -->
 
-        <article class="cube-face cube-face-top">
-          <h2 class="face-title"><span>Pro</span>jects</h2>
+        <article class="cube-face cube-face-top interactive-face" (click)="abrirModal(currentSide)" >
+          <h2 class="face-title"><span>Pro</span>yectos</h2>
         </article>
 
         <!-- BOTTOM -->
 
         <article class="cube-face cube-face-bottom">
-          <h2 class="face-title">Con<span>tacts</span></h2>
+
+          <div class="contact-wrapper">
+            
+            <h2 class="face-title">
+              ¡Contác<span>tame!</span>
+            </h2>
+
+            <ion-text class="contact-item ion-text-center">
+              <span>Correo:</span>
+
+              <a
+                href="mailto:lgsiguenza01@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                lgsiguenza01@gmail.com
+
+              </a>
+            </ion-text>
+
+            <ion-text class="contact-item ion-text-center">
+              <span>Teléfono:</span>
+
+              <a href="tel:+5491125158761">
+                +54 9 11 2515-8761
+              </a>
+            </ion-text>
+
+            <ion-text class="contact-item ion-text-center">
+              <span>GitHub:</span>
+
+              <a
+                href="https://github.com/lgsiguenza"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                @lgsiguenza
+
+              </a>
+            </ion-text>
+
+            <ion-text class="contact-item ion-text-center">
+              <span>LinkedIn:</span>
+
+              <a
+                href="https://www.linkedin.com/in/lucas-sig%C3%BCenza-648856250"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                @Lucas Sigüenza
+
+              </a>
+            </ion-text>
+
+          </div>
+
         </article>
 
       </div>
