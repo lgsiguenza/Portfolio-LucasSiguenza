@@ -4,8 +4,9 @@
             DIMENSIONES
   ========================= */
 
-  --cube-size: 550px;
-  --cube-half: 275px;
+  --cube-size: 600px;
+  --cube-half: 300px;
+  
 
   /* =========================
               COLORES
@@ -50,7 +51,7 @@ ion-content {
 
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 4rem;
 
   padding: 3rem;
@@ -267,17 +268,6 @@ ion-content {
   color: var(--text-color);
 }
 
-/* =========================
-          RESPONSIVE
-========================= */
-
-@media (max-width: 1200px) {
-
-  .portfolio-layout {
-    flex-direction: column;
-  }
-
-}
 
 .contact-wrapper {
   display: flex;
@@ -318,4 +308,152 @@ ion-content {
 .face-title span,
 .contact-item span {
   color: var(--primary-color);
+}
+/* =========================
+          TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  :host {
+    --cube-size: 520px;
+    --cube-half: 260px;
+  }
+
+  .portfolio-layout {
+    gap: 2rem;
+
+    padding: 2rem;
+  }
+
+  .cube-face {
+    padding: 1.5rem;
+  }
+
+  .intro-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .intro-content {
+    max-width: 280px;
+  }
+
+  .intro-heading,
+  .face-title {
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+
+  .intro-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+}
+
+/* =========================
+          MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+  :host {
+    --cube-size: 360px;
+    --cube-half: 180px;
+  }
+
+  .portfolio-layout {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .cube-face {
+    padding: 1rem;
+    border-width: 5px;
+  }
+
+  .intro-wrapper {
+    gap: 0.8rem;
+  }
+
+  .intro-image {
+    width: 95px;
+    height: 95px;
+
+    flex-shrink: 0;
+  }
+
+  .intro-content {
+    max-width: 180px;
+  }
+
+  .intro-heading,
+  .face-title {
+    margin-bottom: 0.75rem;
+
+    font-size: 1.15rem;
+    line-height: 1.2;
+  }
+
+  .intro-text {
+    font-size: 0.7rem;
+    line-height: 1.35;
+  }
+
+  .contact-item,
+  .contact-item a {
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+}
+
+/* =========================
+      MOBILE PEQUEÑO
+========================= */
+
+@media (max-width: 450px) {
+
+  :host {
+    --cube-size: 300px;
+    --cube-half: 150px;
+  }
+
+  .cube-face {
+    padding: 0.8rem;
+    border-width: 4px;
+  }
+
+  .intro-wrapper {
+    gap: 0.6rem;
+  }
+
+  .intro-image {
+    width: 75px;
+    height: 75px;
+  }
+
+  .intro-content {
+    max-width: 150px;
+  }
+
+  .intro-heading,
+  .face-title {
+    margin-bottom: 0.5rem;
+
+    font-size: 0.95rem;
+    line-height: 1.15;
+  }
+
+  .intro-text {
+    font-size: 0.6rem;
+    line-height: 1.25;
+  }
+
+  .contact-item,
+  .contact-item a {
+    font-size: 0.65rem;
+  }
+
 }
