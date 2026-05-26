@@ -4,6 +4,10 @@ import { Lado } from 'src/app/models/cubo';
 import { HeaderComponent } from "src/app/componentes/header/header.component";
 import { MenuLateralComponent } from "src/app/componentes/menu-lateral/menu-lateral.component";
 import { Util } from 'src/app/servicios/util';
+import { EstudiosModalComponent } from 'src/app/componentes/modals/estudios-modal/estudios-modal.component';
+import { TecnologiasModalComponent } from 'src/app/componentes/modals/tecnologias-modal/tecnologias-modal.component';
+import { ExperienciaModalComponent } from 'src/app/componentes/modals/experiencia-modal/experiencia-modal.component';
+import { ProyectosModalComponent } from 'src/app/componentes/modals/proyectos-modal/proyectos-modal.component';
 
 
 
@@ -22,8 +26,8 @@ export class PrincipalPage implements OnInit {
 
   protected readonly menuItems: { label: string; side: Lado }[] = [
     { label: 'Sobre mí', side: 'front' },
-    { label: 'Experiencia', side: 'right' },
     { label: 'Educación', side: 'back' },
+    { label: 'Experiencia', side: 'right' },
     { label: 'Tecnologías', side: 'left' },
     { label: 'Proyectos', side: 'top' },
     { label: '¡Contáctame!', side: 'bottom' }
@@ -34,7 +38,20 @@ export class PrincipalPage implements OnInit {
   }
 
   async abrirModal(item: Lado){
-    console.log(item)
+    switch(item){
+      case 'back':
+        await this.utilSvc.crearModal(EstudiosModalComponent, 'full', {}, true);
+        break;
+      case 'left':
+        await this.utilSvc.crearModal(TecnologiasModalComponent, 'full', {}, true);
+        break;
+      case 'right':
+        await this.utilSvc.crearModal(ExperienciaModalComponent, 'full', {}, true);
+        break;
+      case 'top':
+        await this.utilSvc.crearModal(ProyectosModalComponent, 'full', {}, true);
+        break;
+    }
   }
 
   constructor() { }
