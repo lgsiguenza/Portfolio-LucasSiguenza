@@ -1,0 +1,1 @@
+export type Lado = 'front' | 'back' | 'left' | 'right' | 'top' | 'bottom'

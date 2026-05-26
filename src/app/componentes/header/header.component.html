@@ -1,0 +1,21 @@
+<header class="portfolio-header">
+
+  <div class="header-scroll">
+
+    @for(item of items; track item.side) {
+
+      <ion-button
+        fill="clear"
+        class="menu-btn"
+        [class.active]="currentSide === item.side"
+        (click)="onSelect(item.side)">
+
+        {{ item.label }}
+
+      </ion-button>
+
+    }
+
+  </div>
+
+</header>

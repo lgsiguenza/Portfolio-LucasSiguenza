@@ -1,0 +1,52 @@
+:host {
+  width: 100%;
+  display: block;
+}
+
+.portfolio-header {
+  width: 100%;
+
+  padding: 1rem;
+
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(0, 234, 255, 0.2);
+}
+
+.header-scroll {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.menu-btn {
+  flex-shrink: 0;
+
+  min-width: max-content;
+
+  border-top: 2px solid rgba(0, 234, 255, 0.721);
+  border-bottom: 2px solid rgba(0, 234, 255, 0.721);
+
+  --color: white;
+
+  font-family: monospace;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.menu-btn.active {
+  --color: rgb(0, 234, 255);
+
+  transform: scale(1.05);
+}
