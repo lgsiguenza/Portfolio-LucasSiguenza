@@ -1,0 +1,46 @@
+<div class="carousel-container ion-display-flex ion-justify-content-center">
+
+  <div class="carousel"
+       (touchstart)="onTouchStart($event)"
+       (touchend)="onTouchEnd($event)">
+
+    <div class="slides"
+         [style.transform]="'translateX(-' + index() * 100 + '%)'">
+
+      <!-- IMÁGENES -->
+      @for (img of images(); track $index) {
+        <div class="slide">
+          <div class="img-wrapper">
+            <img [src]="img">
+          </div>
+        </div>
+      }
+
+      <!-- SLIDE FINAL: MENSAJE -->
+      <div class="slide message-slide">
+        <div class="message-text">
+          {{ message() }}
+        </div>
+      </div>
+
+    </div>
+
+    <!-- NAV -->
+    @if (mostrarNav()) {
+
+      <button class="nav-side left"
+              (click)="anterior()"
+              [disabled]="index() === 0">
+        <ion-icon name="chevron-back"></ion-icon>
+      </button>
+
+      <button class="nav-side right"
+              (click)="siguiente()"
+              [disabled]="index() === totalSlides() - 1">
+        <ion-icon name="chevron-forward"></ion-icon>
+      </button>
+
+    }
+
+  </div>
+</div>

@@ -317,3 +317,52 @@
     height: 2.8rem;
   }
 }
+
+.close-btn {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+
+  width: 4rem;
+  height: 4rem;
+
+  border-radius: 50%;
+  border: 2px solid rgba(56, 182, 255, 0.45);
+
+  background: radial-gradient(
+    circle,
+    rgba(56,182,255,.22),
+    rgba(0,0,0,.82)
+  );
+
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  z-index: 9999;
+
+  box-shadow:
+    0 0 12px rgba(56,182,255,.45),
+    0 0 24px rgba(56,182,255,.22);
+
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.close-icon {
+  font-size: 2.2rem;
+  color: #38b6ff;
+}
+
+.close-btn:hover {
+  transform: scale(1.1);
+  box-shadow:
+    0 0 18px rgba(56,182,255,.75),
+    0 0 40px rgba(56,182,255,.35);
+}
+
+.close-btn:active {
+  transform: scale(.96);
+}

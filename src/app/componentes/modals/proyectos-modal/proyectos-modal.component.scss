@@ -1,0 +1,324 @@
+.modal {
+  --background: #000;
+  color: white;
+  border: 2px solid #38b6ff;
+  border-radius: 2rem;
+  padding: 12px;
+  font-family: 'IBM Plex Mono', monospace;
+
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  margin-top: 8px;
+
+  .title {
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+    letter-spacing: 2px;
+    font-weight: 400;
+    color: #dafffd;
+  }
+
+  .subtitle {
+    font-size: 12px;
+    margin-top: 2px;
+    opacity: 0.7;
+    color: #dafffd;
+  }
+}
+
+/* HERO */
+.hero {
+  margin: 10px auto;
+  border-radius: 2rem;
+  width: 75%;
+  display: flex;
+  justify-content: center;
+}
+
+/* SVG (lo dejo intacto por si lo usas dentro del carrusel igualmente) */
+.svg-demo {
+  width: 320px;
+  height: 160px;
+}
+
+.dash-circle {
+  fill: none;
+  stroke: #38B6FF;
+  stroke-dasharray: 4 6;
+  opacity: 0.6;
+}
+
+.text-left,
+.text-right {
+  fill: #dafffd;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.text-right {
+  fill: #38B6FF;
+}
+
+.cursor {
+  fill: #38B6FF;
+}
+
+/* DESCRIPTION */
+.desc {
+  text-align: center;
+  font-size: 12px;
+  color: #dafffd;
+  opacity: 0.8;
+  margin: 6px 0 10px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* STACK */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* CARD */
+.card {
+  background: rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 10px rgba(56, 182, 255, 0.3);
+  padding: 8px;
+  border-radius: 6px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+  h3 {
+    font-size: 11px;
+    color: #38B6FF;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+  }
+
+  span {
+    display: inline-block;
+    font-size: 12px;
+    color: #dafffd;
+    margin: 2px 4px 2px 0;
+    padding: 1px 5px;
+    border-radius: 3px;
+    background: rgba(56, 182, 255, 0.08);
+  }
+}
+
+/* TECH LIST */
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 3px 6px;
+  font-size: 12px;
+
+  border: 1px solid rgba(56, 182, 255, 0.4);
+  background: rgba(56, 182, 255, 0.08);
+  border-radius: 4px;
+}
+
+/* icono tecnología */
+.tech-icon {
+  width: 13px;
+  height: 13px;
+  filter: drop-shadow(0 0 2px rgba(56, 182, 255, 0.6));
+}
+
+/* DEMO CHIP */
+.demo-chip {
+  margin-top: 6px;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.demo-chip ion-chip {
+  cursor: pointer;
+
+  background: rgba(0, 190, 220, 0.12);
+  border: 1px solid rgba(0, 190, 220, 0.4);
+  color: #00BEDC;
+
+  transform: scale(0.95);
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(0, 190, 220, 0.25);
+    transform: scale(1);
+  }
+}
+
+/* =========================================================
+   FLOATING BUTTON SYSTEM (BASE)
+   ========================================================= */
+
+:host {
+
+  --floating-btn-right: 18px;
+
+  --floating-btn-size: 2.5rem;
+  --floating-icon-size: 1.8rem;
+
+  --floating-border: rgba(56, 182, 255, .45);
+  --floating-glow: rgba(56, 182, 255, .45);
+  --floating-glow-soft: rgba(56, 182, 255, .22);
+}
+
+/* =========================================================
+   BASE (CLOSE + SCROLL)
+   ========================================================= */
+
+.close-btn,
+.scroll-btn {
+
+  position: fixed;
+  right: var(--floating-btn-right);
+
+  width: var(--floating-btn-size);
+  height: var(--floating-btn-size);
+
+  border-radius: 50%;
+
+  border: 2px solid var(--floating-border);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(56,182,255,.22),
+      rgba(0,0,0,.82)
+    );
+
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  z-index: 9999;
+
+  box-shadow:
+    0 0 12px var(--floating-glow),
+    0 0 24px var(--floating-glow-soft);
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    border-color .25s ease,
+    filter .25s ease;
+}
+
+/* =========================================================
+   ICONOS
+   ========================================================= */
+
+.close-icon,
+.scroll-btn ion-icon {
+
+  font-size: var(--floating-icon-size);
+
+  color: var(--education-primary);
+
+  transition:
+    transform .25s ease,
+    color .25s ease,
+    filter .25s ease;
+}
+
+/* =========================================================
+   POSICIONES
+   ========================================================= */
+
+.close-btn {
+  top: 14px;
+}
+
+.scroll-btn-top {
+  top: 92px;
+}
+
+.scroll-btn-bottom {
+  bottom: 14px;
+}
+
+/* =========================================================
+   HOVER (EFECTO "ENERGÍA")
+   ========================================================= */
+
+.close-btn:hover,
+.scroll-btn:hover {
+
+  transform: scale(1.1);
+
+  border-color: rgba(56,182,255,.95);
+
+  box-shadow:
+    0 0 18px rgba(56,182,255,.75),
+    0 0 40px rgba(56,182,255,.35);
+
+  filter: brightness(1.15);
+}
+
+/* =========================================================
+   CLOSE ROTATION (IDENTIDAD VISUAL)
+   ========================================================= */
+
+.close-btn:hover .close-icon {
+
+  transform: rotate(90deg);
+
+  color: #fff;
+}
+
+/* =========================================================
+   ACTIVE (PRESS FEEL)
+   ========================================================= */
+
+.close-btn:active,
+.scroll-btn:active {
+
+  transform: scale(.96);
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+  :host {
+
+    --floating-btn-right: 10px;
+    --floating-btn-size: 3.5rem;
+    --floating-icon-size: 2rem;
+  }
+
+  .scroll-btn-top {
+    top: 82px;
+  }
+}
+

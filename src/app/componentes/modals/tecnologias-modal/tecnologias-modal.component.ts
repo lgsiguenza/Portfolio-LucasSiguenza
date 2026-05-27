@@ -1,7 +1,7 @@
-import { Component, computed, OnInit, signal } from '@angular/core';
-import { IonIcon, IonContent } from "@ionic/angular/standalone";
+import { Component, computed, inject, OnInit, signal } from '@angular/core';
+import { IonIcon, IonContent, ModalController } from "@ionic/angular/standalone";
 import { addIcons } from 'ionicons';
-import { chevronBackOutline, chevronDownOutline, chevronForwardOutline, chevronUpOutline } from 'ionicons/icons';
+import { chevronBackOutline, chevronForwardOutline, closeOutline} from 'ionicons/icons';
 
 @Component({
   selector: 'app-tecnologias-modal',
@@ -148,8 +148,14 @@ export class TecnologiasModalComponent  implements OnInit {
 
     this.siguiente();
   }
+
+  private modalCtrl = inject(ModalController);
+
+  protected async cerrarModal(): Promise<void> {
+    await this.modalCtrl.dismiss();
+  }
   constructor() {
-    addIcons({chevronBackOutline, chevronForwardOutline})
+    addIcons({chevronBackOutline, chevronForwardOutline, closeOutline})
    }
 
   ngOnInit() {}

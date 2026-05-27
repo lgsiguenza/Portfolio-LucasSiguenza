@@ -1,5 +1,12 @@
 <ion-content class="tech-carousel-container">
 
+
+   <!-- CERRAR -->
+  <button class="close-btn" (click)="cerrarModal()">
+    <ion-icon name="close-outline" class="close-icon"></ion-icon>
+  </button>
+
+
   <div
     class="tech-carousel"
     (touchstart)="onTouchStart($event)"

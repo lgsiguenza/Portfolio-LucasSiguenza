@@ -1,3 +1,76 @@
-<p>
-  proyectos-modal works!
-</p>
+<ion-content class="modal">
+<!-- BOTON ARRIBA -->
+<button class="scroll-btn scroll-btn-top" (click)="irArriba()">
+  <ion-icon
+    name='arrow-up-outline'>
+  </ion-icon>
+</button>
+
+<!-- BOTON ABAJO -->
+<button class="scroll-btn scroll-btn-bottom" (click)="irAbajo()">
+  <ion-icon
+    name='arrow-down-outline'>
+  </ion-icon>
+</button>
+
+<!-- CERRAR -->
+<button class="close-btn" (click)="cerrarModal()">
+  <ion-icon name="close-outline" class="close-icon"></ion-icon>
+</button>
+  <!-- HEADER -->
+  <div class="header">
+    <div class="title">{{ project().title }}</div>
+    <div class="subtitle">{{ project().subtitle }}</div>
+  </div>
+
+  <!-- HERO SVG -->
+  <div class="hero">
+   <app-carrusel-imagenes
+    [images]="imagenes"
+    [message]="mensaje"
+   >
+   </app-carrusel-imagenes>
+  </div>
+     <!-- CHIP DEMO -->
+    <a class="demo-chip ion-display-flex ion-justify-content-center" 
+      href="https://guzman-motos-demo.vercel.app/"
+      target="_blank"
+      rel="noopener noreferrer">
+      <ion-chip>
+        <ion-label>DEMO EN VIVO</ion-label>
+      </ion-chip>
+    </a>
+  <!-- DESCRIPTION -->
+  <p class="desc">
+    {{ project().description }}
+  </p>
+
+  <!-- SINGLE COLUMN -->
+  <div class="stack">
+
+    <!-- TECH -->
+    <div class="card">
+      <h3>Tecnologías</h3>
+
+      <div class="tech-list">
+        @for (t of project().tech; track t) {
+          <div class="tech-item">
+            <img [src]="t.src" class="tech-icon" />
+              {{ t.nombre }}
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- FEATURES -->
+    <div class="card">
+      <h3>Funcionalidades destacadas</h3>
+
+      @for (f of project().features; track f) {
+        <span class="">{{ f }}</span>
+      }
+    </div>
+
+  </div>
+
+</ion-content>
