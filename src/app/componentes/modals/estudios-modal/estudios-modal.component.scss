@@ -1,0 +1,360 @@
+/* =========================================================
+   HOST
+   ========================================================= */
+
+:host {
+
+  display: block;
+
+  /* =======================================================
+     PALETA
+     ======================================================= */
+
+  --education-primary: #38b6ff;
+
+  --education-text: #dafffd;
+
+  --education-text-soft: rgba(218, 255, 253, .82);
+
+  /* =======================================================
+     BACKGROUND
+     ======================================================= */
+
+  --education-bg-image:
+    url("https://lh5.googleusercontent.com/y58mIMZC-IwE41TNehTaXikfD26LtOLULH3BRTAnFxSB33UHwDwf5wVfVvwVwsju1uo=w2400");
+
+  /*
+    Overlay superior:
+    ayuda a oscurecer la imagen para mejorar legibilidad
+  */
+
+  --education-bg-overlay:
+    linear-gradient(
+      180deg,
+      rgba(18, 18, 18, .78),
+      rgba(0, 0, 0, .92)
+    );
+
+  /* =======================================================
+     SPACING
+     ======================================================= */
+
+  --education-padding: 28px;
+
+  --education-gap: 32px;
+
+  --education-section-gap: 20px;
+
+  /* =======================================================
+     TYPOGRAPHY
+     ======================================================= */
+
+  --education-title-size:
+    clamp(2.2rem, 5vw, 3rem);
+
+  --education-subtitle-size: 1.2rem;
+
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* =========================================================
+   ION CONTENT
+   ========================================================= */
+
+.education-content {
+
+  /*
+    Ionic usa CSS variables internas.
+    Es preferible definirlas separadas y explícitas.
+  */
+
+  --background:
+    var(--education-bg-overlay),
+    var(--education-bg-image);
+
+  --color: white;
+
+  /*
+    Hace que la imagen SIEMPRE cubra
+    proporcionalmente el modal.
+  */
+
+  background-size: cover;
+
+  /*
+    Centra la parte importante de la imagen.
+  */
+
+  background-position: center center;
+
+  /*
+    Evita mosaicos/repeticiones.
+  */
+
+  background-repeat: no-repeat;
+
+  /*
+    Mantiene fija la textura visual mientras
+    el contenido scrollea.
+    Si no te gusta podés quitarlo.
+  */
+
+  background-attachment: fixed;
+}
+
+/* =========================================================
+   WRAPPER PRINCIPAL
+   ========================================================= */
+
+.education-wrapper {
+
+  padding: var(--education-padding);
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: var(--education-gap);
+}
+
+/* =========================================================
+   TITULO PRINCIPAL
+   ========================================================= */
+
+.intro-heading {
+
+  font-size: var(--education-title-size);
+
+  line-height: 1;
+
+  font-weight: 500;
+
+  color: var(--education-text);
+}
+
+.intro-heading span {
+
+  color: var(--education-primary);
+}
+
+/* =========================================================
+   BLOQUES EDUCACION
+   ========================================================= */
+
+.work-edu-section {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: var(--education-section-gap);
+}
+
+/* =========================================================
+   TITULOS GENERALES
+   ========================================================= */
+
+.work-edu-heading {
+
+  display: block;
+
+  font-size: var(--education-subtitle-size);
+
+  line-height: 1.3;
+}
+
+/* =========================================================
+   FECHA
+   ========================================================= */
+
+.work-edu-heading.date {
+
+  min-width: 110px;
+
+  color: var(--education-primary);
+
+  font-weight: 500;
+}
+
+/* =========================================================
+   UNIVERSIDAD / EMPRESA
+   ========================================================= */
+
+.work-edu-heading.company {
+
+  margin-bottom: 12px;
+
+  color: white;
+}
+
+/* =========================================================
+   CONTENIDO DERECHO
+   ========================================================= */
+
+.work-edu-info {
+
+  flex: 1;
+
+  min-width: 0;
+}
+
+/* =========================================================
+   LISTA
+   ========================================================= */
+
+.education-list {
+
+  padding-left: 18px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.education-list li {
+
+  color: var(--education-text-soft);
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+  :host {
+
+    --education-padding: 22px 18px;
+
+    --education-gap: 26px;
+
+    --education-section-gap: 10px;
+  }
+
+  .work-edu-section {
+
+    flex-direction: column;
+  }
+
+  .work-edu-heading.date {
+
+    min-width: unset;
+  }
+}
+/* =========================================================
+   BOTON CERRAR
+   ========================================================= */
+
+.close-btn {
+
+  position: absolute;
+
+  top: 14px;
+  right: 14px;
+
+  width: 4rem;
+  height: 4rem;
+
+  border-radius: 50%;
+
+  border: 2px solid rgba(56, 182, 255, .45);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(56,182,255,.22),
+      rgba(0,0,0,.82)
+    );
+
+  backdrop-filter: blur(8px);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  z-index: 999;
+
+  cursor: pointer;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    border-color .25s ease;
+
+  box-shadow:
+    0 0 12px rgba(56,182,255,.45),
+    0 0 24px rgba(56,182,255,.22);
+
+}
+
+/* =========================================================
+   ICONO
+   ========================================================= */
+
+.close-icon {
+
+  font-size: 2.4rem;
+
+  color: var(--education-primary);
+
+  transition:
+    transform .25s ease,
+    color .25s ease;
+}
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.close-btn:hover {
+
+  transform: scale(1.08);
+
+  border-color: rgba(56,182,255,.9);
+
+  box-shadow:
+    0 0 18px rgba(56,182,255,.75),
+    0 0 36px rgba(56,182,255,.35);
+}
+
+.close-btn:hover .close-icon {
+
+  transform: rotate(90deg);
+
+  color: white;
+}
+
+/* =========================================================
+   ACTIVE
+   ========================================================= */
+
+.close-btn:active {
+
+  transform: scale(.96);
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+  .close-btn {
+
+    width: 3.5rem;
+    height: 3.5rem;
+
+    top: 10px;
+    right: 10px;
+  }
+
+  .close-icon {
+
+    font-size: 2rem;
+  }
+}

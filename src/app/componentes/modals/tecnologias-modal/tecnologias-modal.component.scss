@@ -1,0 +1,319 @@
+/* =========================================================
+   TECH CAROUSEL (MODAL FRIENDLY)
+   ========================================================= */
+
+/* =========================================================
+   ROOT CONTAINER (inside ion-modal)
+   ========================================================= */
+
+.tech-carousel-container {
+  width: 100%;
+
+  /*
+    En modal no queremos limitar demasiado el ancho,
+    Ionic ya centra el contenido.
+  */
+  max-width: 100%;
+
+  position: relative;
+
+  /*
+    Espacio interno para que no toque bordes del modal
+  */
+  padding: 1rem;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   CAROUSEL
+   ========================================================= */
+
+.tech-carousel {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  border-radius: 1.4rem;
+}
+
+/* =========================================================
+   SLIDES
+   ========================================================= */
+
+.tech-slides {
+  display: flex;
+
+  transition: transform .45s cubic-bezier(.2,.8,.2,1);
+}
+
+/* =========================================================
+   SLIDE
+   ========================================================= */
+
+.tech-slide {
+  min-width: 100%;
+
+  /*
+    En modal reducimos padding global para evitar overflow vertical
+  */
+  padding: 1.25rem;
+
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+}
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.tech-card {
+  width: 100%;
+
+  /*
+    Importante en modal: evitar alturas rígidas grandes
+  */
+  min-height: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 2rem;
+
+  padding: 2rem 1.5rem;
+
+  border-radius: 1.5rem;
+
+  border: 1px solid rgba(56,182,255,.22);
+
+  background: linear-gradient(
+    180deg,
+    rgba(10,18,25,.92),
+    rgba(0,0,0,.96)
+  );
+
+  box-shadow:
+    inset 0 0 30px rgba(56,182,255,.05),
+    0 0 20px rgba(56,182,255,.10);
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.tech-title {
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+
+  font-weight: 600;
+
+  color: #38b6ff;
+
+  letter-spacing: .12rem;
+
+  text-transform: uppercase;
+
+  text-align: center;
+}
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.tech-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 1rem;
+
+  max-width: 32rem;
+
+  margin-inline: auto;
+}
+
+/* =========================================================
+   ITEM
+   ========================================================= */
+
+.tech-item {
+  min-height: 6.5rem;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: .6rem;
+
+  padding: .9rem;
+
+  border-radius: 1rem;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.399),
+    rgba(255,255,255,.02)
+  );
+
+  border: 2px solid rgba(255,255,255,.04);
+
+  transition:
+    transform .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease;
+
+  box-sizing: border-box;
+}
+
+.tech-item:hover {
+  transform: translateY(-2px);
+
+  border-color: rgb(56, 182, 255);
+
+  box-shadow: 0 0 140px rgba(56,182,255,.14);
+}
+
+/* =========================================================
+   ICON
+   ========================================================= */
+
+.tech-icon {
+  width: 3rem;
+  height: 3rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech-icon svg {
+  width: 100%;
+  height: 100%;
+
+  fill: var(--theme-primary);
+
+  filter: drop-shadow(0 0 10px rgba(56,182,255,.30));
+}
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+.tech-label {
+  font-size: .9rem;
+
+  color: var(--theme-text-soft);
+
+  text-align: center;
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.tech-nav {
+  position: absolute;
+
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 3.2rem;
+  height: 3.2rem;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(56,182,255,.35);
+
+  background: rgba(0,0,0,.72);
+
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 20;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    opacity .2s ease;
+}
+
+.tech-nav:hover:not(:disabled) {
+  transform: translateY(-50%) scale(1.08);
+
+  box-shadow: 0 0 16px rgba(56,182,255,.28);
+}
+
+.tech-nav ion-icon {
+  font-size: 1.4rem;
+  color: var(--theme-primary);
+}
+
+.tech-nav.left {
+  left: .6rem;
+}
+
+.tech-nav.right {
+  right: .6rem;
+}
+
+.tech-nav:disabled {
+  opacity: .18;
+  pointer-events: none;
+}
+
+/* =========================================================
+   MOBILE OPTIMIZATION (MODAL REAL WORLD)
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .tech-slide {
+    padding: .75rem;
+  }
+
+  .tech-card {
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .tech-grid {
+    grid-template-columns: 1fr;
+    gap: .75rem;
+  }
+
+  .tech-icon {
+    width: 2.7rem;
+    height: 2.7rem;
+  }
+}
+
+@media (max-width: 420px) {
+
+  .tech-carousel-container {
+    padding: .75rem;
+  }
+
+  .tech-title {
+    font-size: 1.3rem;
+  }
+
+  .tech-nav {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+}

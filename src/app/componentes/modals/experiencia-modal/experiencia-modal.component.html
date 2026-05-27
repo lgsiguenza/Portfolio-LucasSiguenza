@@ -1,3 +1,144 @@
-<p>
-  experiencia-modal works!
-</p>
+<ion-content class="education-content">
+ <!-- BOTON ARRIBA -->
+
+
+    <button
+      class="scroll-btn scroll-btn-top"
+        (click)="irSeccionAnterior()">
+      <ion-icon
+        [name]="mostrarArriba()
+          ? 'chevron-up-outline'
+          : 'arrow-up-outline'">
+      </ion-icon>
+
+    </button>
+
+
+  <!-- BOTON ABAJO -->
+
+
+    <button
+      class="scroll-btn scroll-btn-bottom"
+      (click)="irSeccionSiguiente()">
+
+      <ion-icon
+        [name]="mostrarAbajo()
+          ? 'chevron-down-outline'
+          : 'arrow-down-outline'">
+      </ion-icon>
+
+    </button>
+  
+  <!-- CERRAR -->
+
+  <button
+    class="close-btn"
+    (click)="cerrarModal()">
+
+    <ion-icon
+      name="close-outline"
+      class="close-icon">
+    </ion-icon>
+
+  </button>
+  <div class="education-wrapper">
+
+    <ion-text class="intro-heading">
+      Experi<span>encias</span>
+    </ion-text>
+
+    <div class="work-edu-section">
+
+      <ion-text class="work-edu-heading date">
+        2025-2026
+      </ion-text>
+
+      <div id="exp-0" class="work-edu-info">
+
+        <ion-text class="work-edu-heading company">
+          Prácticas Profesionales (UTN) ─ Lider de equipo de desarrolladores.
+        </ion-text>
+
+        <ul class="education-list">
+          <li>Coordiné un equipo horizontal de tres desarrolladores durante el diseño y desarrollo de una aplicación móvil enfocada en la gestión integral de restaurantes.</li>
+
+            <li>Gestión de pedidos y estados operativos en tiempo real.</li>
+            <li>Administración de productos, usuarios, mesas, listas de espera y roles.</li>
+            <li>Registro y validación de clientes mediante escaneo QR de DNI.</li>
+            <li>Integración GPS para funcionalidades de delivery y localización.</li>
+            <li>Uso de capacidades nativas y sensores del dispositivo móvil(GPS, giroscopio, vibración, cámara, y galería).</li>
+            <li>Integración completa entre frontend, backend y base de datos.</li>
+            <li>Diseño de interfaces responsivas y flujos de navegación móviles.</li>
+            <li>Implementación de lógica de negocio, validaciones y persistencia de datos.</li>
+        </ul>
+
+      </div>
+
+    </div>
+    <div id="exp-1" class="work-edu-section">
+
+      <ion-text class="work-edu-heading date">
+        2023-2026
+      </ion-text>
+
+      <div class="work-edu-info">
+
+        <ion-text class="work-edu-heading company">
+          Guzmán Motos ─ Desarrollador independiente.
+        </ion-text>
+
+        <ul class="education-list">
+          <li>
+  Diseño y desarrollo de una plataforma web y móvil
+  orientada a la gestión integral de reparaciones
+  para un taller mecánico de motos.
+</li>
+
+<li>
+  Implementación de autenticación de usuarios
+  y control de acceso dentro de la aplicación.
+</li>
+
+<li>
+  Desarrollo de vistas dinámicas y reactivas
+  con actualización de información en tiempo real.
+</li>
+
+<li>
+  Gestión y seguimiento de vehículos,
+  reparaciones, presupuestos y estados operativos.
+</li>
+
+<li>
+  Integración con WhatsApp para comunicación
+  y seguimiento de clientes.
+</li>
+
+<li>
+  Diseño de interfaces responsivas
+  adaptadas a dispositivos móviles y escritorio.
+</li>
+
+<li>
+  Participación en el desarrollo frontend y backend
+  aplicando arquitecturas modernas y componentes reutilizables.
+</li>
+
+<li>
+  Implementación de lógica de negocio,
+  validaciones y persistencia de datos.
+</li>
+
+<li>
+  Organización estructural del proyecto
+  utilizando metodologías ágiles y buenas prácticas de desarrollo.
+</li>
+</ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</ion-content>

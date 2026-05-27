@@ -1,3 +1,79 @@
-<p>
-  tecnologias-modal works!
-</p>
+<ion-content class="tech-carousel-container">
+
+  <div
+    class="tech-carousel"
+    (touchstart)="onTouchStart($event)"
+    (touchend)="onTouchEnd($event)"
+  >
+
+    <!-- SLIDES -->
+    <div
+      class="tech-slides"
+      [style.transform]="'translateX(-' + activeIndex() * 100 + '%)'"
+    >
+
+      @for (domain of domains; track domain.id) {
+
+        <div class="tech-slide">
+
+          <div class="tech-card">
+
+            <!-- TITLE -->
+            <p class="tech-title">
+              {{ domain.title }}
+            </p>
+
+            <!-- GRID -->
+            <div class="tech-grid">
+
+              @for (icon of domain.icons; track icon.label) {
+
+                <div class="tech-item">
+
+                  <img
+                    class="tech-icon"
+                    [src]="icon.svg"
+                  >
+
+                  <span class="tech-label">
+                    {{ icon.label }}
+                  </span>
+
+                </div>
+
+              }
+
+            </div>
+
+          </div>
+
+        </div>
+
+      }
+
+    </div>
+
+    <!-- NAVIGATION -->
+    @if (domains.length > 1) {
+
+      <button
+        class="tech-nav left"
+        (click)="anterior()"
+        [disabled]="activeIndex() === 0"
+      >
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </button>
+
+      <button
+        class="tech-nav right"
+        (click)="siguiente()"
+        [disabled]="activeIndex() === domains.length - 1"
+      >
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </button>
+
+    }
+
+  </div>
+
+</ion-content>

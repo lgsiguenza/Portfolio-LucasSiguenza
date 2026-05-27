@@ -40,16 +40,16 @@ export class PrincipalPage implements OnInit {
   async abrirModal(item: Lado){
     switch(item){
       case 'back':
-        await this.utilSvc.crearModal(EstudiosModalComponent, 'full', {}, true);
+        await this.utilSvc.crearModal(EstudiosModalComponent, 'lg', {}, true);
         break;
       case 'left':
-        await this.utilSvc.crearModal(TecnologiasModalComponent, 'full', {}, true);
+        await this.utilSvc.crearModal(TecnologiasModalComponent, 'lg', {}, true);
         break;
       case 'right':
-        await this.utilSvc.crearModal(ExperienciaModalComponent, 'full', {}, true);
+        await this.utilSvc.crearModal(ExperienciaModalComponent, 'md', {}, true);
         break;
       case 'top':
-        await this.utilSvc.crearModal(ProyectosModalComponent, 'full', {}, true);
+        await this.utilSvc.crearModal(ProyectosModalComponent, 'md', {}, true);
         break;
     }
   }

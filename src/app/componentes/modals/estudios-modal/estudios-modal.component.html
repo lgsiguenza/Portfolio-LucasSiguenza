@@ -1,3 +1,65 @@
-<p>
-  estudios-modal works!
-</p>
+<ion-content class="education-content">
+ <!-- BOTÓN CERRAR -->
+
+  <button class="close-btn" (click)="cerrarModal()">
+
+    <ion-icon
+      slot="icon-only"
+      name="close-outline"
+      class="close-icon">
+    </ion-icon>
+
+  </button>
+  <div class="education-wrapper">
+
+    <ion-text class="intro-heading">
+      Forma<span>ción</span>
+    </ion-text>
+
+    <div class="work-edu-section">
+
+      <ion-text class="work-edu-heading date">
+        2016-2022
+      </ion-text>
+
+      <div class="work-edu-info">
+
+        <ion-text class="work-edu-heading company">
+          Insituto 13 de Julio ─ Técnico electromecánico
+        </ion-text>
+
+        <ul class="education-list">
+          <li>Formación en técnico electromecánico. Adquirí conocimientos de diseño en autocad y solid works,
+            lectura de planos eléctricos y electrónicos, funcionamiento de dispositivos electrónicos,
+            soldadura, trabajo mecánico y confección de instalaciones eléctricas.</li>
+        </ul>
+
+      </div>
+
+    </div>
+    <div class="work-edu-section">
+
+      <ion-text class="work-edu-heading date">
+        2023-2026
+      </ion-text>
+
+      <div class="work-edu-info">
+
+        <ion-text class="work-edu-heading company">
+          Universidad Tecnológica Nacional (UTN) ─ Técnico superior en programación
+        </ion-text>
+
+        <ul class="education-list">
+          <li>Bases de la programación, buenas prácticas y diversos paradigmas.</li>
+          <li>Arquitectura de sistemas, metodologías de diseño, diagramas, y procesos de desarrollo.</li>
+          <li>Contabilidad y organización empresarial.</li>
+          <li>Confección de software fullstack a través de herramientas basadas en Nodejs y Java.</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</ion-content>
