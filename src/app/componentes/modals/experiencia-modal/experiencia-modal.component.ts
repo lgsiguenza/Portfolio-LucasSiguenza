@@ -25,7 +25,7 @@ export class ExperienciaModalComponent  implements OnInit {
   protected readonly mostrarAbajo = () =>   this.indiceActual() < this.secciones.length - 1;
 
 
-  protected readonly indiceActual = signal(0);
+  protected readonly indiceActual = signal(-1);
 
   /* ======================================================
     SCROLL
