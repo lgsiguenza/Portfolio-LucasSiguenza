@@ -8,6 +8,8 @@ import { EstudiosModalComponent } from 'src/app/componentes/modals/estudios-moda
 import { TecnologiasModalComponent } from 'src/app/componentes/modals/tecnologias-modal/tecnologias-modal.component';
 import { ExperienciaModalComponent } from 'src/app/componentes/modals/experiencia-modal/experiencia-modal.component';
 import { ProyectosModalComponent } from 'src/app/componentes/modals/proyectos-modal/proyectos-modal.component';
+import { addIcons } from 'ionicons';
+import { chevronBackOutline, chevronDownOutline, chevronForwardOutline, chevronUpOutline } from 'ionicons/icons';
 
 
 
@@ -16,7 +18,7 @@ import { ProyectosModalComponent } from 'src/app/componentes/modals/proyectos-mo
   templateUrl: './principal.page.html',
   styleUrls: ['./principal.page.scss'],
   standalone: true,
-  imports: [IonContent, IonContent, HeaderComponent, MenuLateralComponent, IonText]
+  imports: [IonContent, IonContent, HeaderComponent, MenuLateralComponent, IonText, IonButton, IonIcon]
 })
 export class PrincipalPage implements OnInit {
 
@@ -153,7 +155,9 @@ export class PrincipalPage implements OnInit {
 
   }
 
-  constructor() { }
+  constructor() {
+    addIcons({chevronUpOutline,chevronDownOutline,chevronBackOutline,chevronForwardOutline});
+   }
 
   ngOnInit() {
   }
