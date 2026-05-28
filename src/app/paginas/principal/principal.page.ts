@@ -78,11 +78,11 @@ export class PrincipalPage implements OnInit {
     if (Math.abs(diffX) > Math.abs(diffY)) {
 
       if (diffX > threshold) {
-        this.moveCube('right');
+        this.moveCube('left');
       }
 
       else if (diffX < -threshold) {
-        this.moveCube('left');
+        this.moveCube('right');
       }
 
       return;
