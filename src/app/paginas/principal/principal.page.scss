@@ -457,3 +457,85 @@ ion-content {
   }
 
 }
+
+.cube-controls {
+
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: 50;
+
+}
+
+.cube-btn {
+
+  position: absolute;
+
+  width: 52px;
+  height: 52px;
+
+  border-radius: 50%;
+
+  border: 2px solid rgba(56, 182, 255, .45);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(56,182,255,.22),
+      rgba(0,0,0,.82)
+    );
+
+  box-shadow:
+    0 0 12px rgba(56,182,255,.45),
+    0 0 24px rgba(56,182,255,.22);
+
+  backdrop-filter: blur(12px);
+
+  color: rgb(255, 255, 255);
+
+  font-size: 1.4rem;
+
+  pointer-events: auto;
+
+  transition: .2s ease;
+
+}
+
+.cube-btn:active {
+
+  transform: scale(1.44);
+
+}
+
+.up {
+
+  top: 20px;
+  left: 50%;
+
+
+}
+
+.down {
+
+  bottom: 100px;
+  left: 50%;
+
+
+}
+
+.left {
+
+  left: 20px;
+  top: 40%;
+
+}
+
+.right {
+
+  right: 20px;
+  top: 40%;
+
+}

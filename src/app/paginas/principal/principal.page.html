@@ -13,7 +13,11 @@
 <div id="main-content">
     <main class="portfolio-layout">
 
-      <section class="scene">
+      <section
+        class="scene"
+        (touchstart)="onTouchStart($event)"
+        (touchend)="onTouchEnd($event)"
+      >
 
         <div class="cube" [class]="'cube show-' + currentSide">
 
@@ -155,7 +159,24 @@
       </div>
 
     </section>
+    <div class="cube-controls">
+      <button class="cube-btn up" (click)="moveCube('up')">
+        ↑
+      </button>
 
+      <button class="cube-btn down" (click)="moveCube('down')">
+        ↓
+      </button>
+
+      <button class="cube-btn left" (click)="moveCube('left')">
+        ←
+      </button>
+
+      <button class="cube-btn right" (click)="moveCube('right')">
+        →
+      </button>
+
+</div>
   </main>
   </div>
 </ion-content>

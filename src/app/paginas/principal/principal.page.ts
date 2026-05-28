@@ -20,6 +20,9 @@ import { ProyectosModalComponent } from 'src/app/componentes/modals/proyectos-mo
 })
 export class PrincipalPage implements OnInit {
 
+  private touchStartX = 0;
+  private touchStartY = 0;
+
   private utilSvc = inject(Util);
 
   protected currentSide: Lado = 'front';
@@ -52,6 +55,102 @@ export class PrincipalPage implements OnInit {
         await this.utilSvc.crearModal(ProyectosModalComponent, 'md', {}, true);
         break;
     }
+  }
+
+
+  protected onTouchStart(event: TouchEvent): void {
+
+    this.touchStartX = event.changedTouches[0].screenX;
+    this.touchStartY = event.changedTouches[0].screenY;
+
+  }
+
+  protected onTouchEnd(event: TouchEvent): void {
+    const endX = event.changedTouches[0].screenX;
+    const endY = event.changedTouches[0].screenY;
+
+    const diffX = endX - this.touchStartX;
+    const diffY = endY - this.touchStartY;
+
+    const threshold = 50;
+
+    // horizontal
+    if (Math.abs(diffX) > Math.abs(diffY)) {
+
+      if (diffX > threshold) {
+        this.moveCube('right');
+      }
+
+      else if (diffX < -threshold) {
+        this.moveCube('left');
+      }
+
+      return;
+    }
+
+    // vertical
+    if (Math.abs(diffY) > Math.abs(diffX)) {
+
+      if (diffY > threshold) {
+        this.moveCube('down');
+      }
+
+      else if (diffY < -threshold) {
+        this.moveCube('up');
+      }
+
+    }
+
+  }
+
+  protected moveCube(direction: 'up' | 'down' | 'left' | 'right'): void {
+    const navigationMap: Record<Lado, Record<string, Lado>> = {
+
+      front: {
+        right: 'right',
+        left: 'left',
+        up: 'top',
+        down: 'bottom'
+      },
+
+      right: {
+        right: 'back',
+        left: 'front',
+        up: 'top',
+        down: 'bottom'
+      },
+
+      back: {
+        right: 'left',
+        left: 'right',
+        up: 'top',
+        down: 'bottom'
+      },
+
+      left: {
+        right: 'front',
+        left: 'back',
+        up: 'top',
+        down: 'bottom'
+      },
+
+      top: {
+        down: 'front',
+        up: 'bottom',
+        left: 'left',
+        right: 'right'
+      },
+
+      bottom: {
+        up: 'front',
+        down: 'back',
+        left: 'left',
+        right: 'right'
+      }
+
+    };
+    this.currentSide = navigationMap[this.currentSide][direction];
+
   }
 
   constructor() { }
